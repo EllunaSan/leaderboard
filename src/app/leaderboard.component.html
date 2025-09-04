@@ -10,6 +10,7 @@
         placeholder="Enter your name"
         [(ngModel)]="userInput"
         (keydown)="onKeydown($event)"
+        maxlength="50"
         required
       />
       <button type ="submit" id="addInput" (click)="addEntry()">OK</button>
