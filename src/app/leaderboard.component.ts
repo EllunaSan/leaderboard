@@ -12,6 +12,13 @@ export class Leaderboard {
   userInput = '';
   leaderboard: Array<{name: string; score: number}> = [];
 
+  // Enables pressing 'enter' in addition to clicking the button
+  onKeydown(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.addEntry()
+    }
+  }
+
   // Adds a new entry to the leaderboard
   addEntry() {
     // Remove blankspaces

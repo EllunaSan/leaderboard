@@ -4,7 +4,14 @@
 
     <!-- User input form -->
     <div class="user-input">
-      <input type="text" id="nameInput" placeholder="Enter your name" [(ngModel)]="userInput" name="userinput" required>
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="Enter your name"
+        [(ngModel)]="userInput"
+        (keydown)="onKeydown($event)"
+        required
+      />
       <button type ="submit" id="addInput" (click)="addEntry()">OK</button>
     </div>
 
