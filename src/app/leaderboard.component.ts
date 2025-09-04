@@ -14,12 +14,17 @@ export class Leaderboard {
 
   // Adds a new entry to the leaderboard
   addEntry() {
-    const name = this.userInput.trim(); // remove blankspaces
+    // Remove blankspaces
+    const name = this.userInput.trim();
+    // If there is no user input
     if (!name) return alert("Please enter a name.");
 
+    // New entry is added to array
     this.leaderboard.push({name, score: this.generateScore()})
+    // Sorts entries by score in descending order
     this.leaderboard.sort((a, b) => b.score - a.score);
-    this.userInput = ""; // reset user input
+    // Resets user input
+    this.userInput = "";
   }
 
   // Generates a random score between 1-100
